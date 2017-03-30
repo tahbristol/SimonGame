@@ -1,0 +1,31 @@
+.one {
+  display:inline-block;
+  width:100px;
+  height:100px;
+  background-color: black;
+  margin:10px;
+}
+
+.two{
+  display:inline-block;
+  width:100px;
+  height:100px;
+  background-color: black;
+  margin:10px;
+}
+
+.three {
+  display:inline-block;
+  width:100px;
+  height:100px;
+  background-color: black;
+  margin:10px;
+}
+
+.four {
+  display:inline-block;
+  width:100px;
+  height:100px;
+  background-color: black;
+  margin:10px;
+}
