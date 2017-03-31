@@ -4,19 +4,19 @@
   height:100px;
   margin:10px;
 }
-.one {
+#one {
   background-color: lightgreen;
 }
-.two {
+#two {
     background-color: lightblue;
 }
-.three {
+#three {
     background-color: pink;
 }
-.four {
+#four {
   background-color: orange;
 }
 
 .clicked {
-  background-color: lightgrey;
+  background-color: lightgrey !important;
 }
