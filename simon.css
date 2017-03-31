@@ -1,31 +1,22 @@
+.one, .two, .three, .four {
+  display:inline-block;
+  width:100px;
+  height:100px;
+  margin:10px;
+}
 .one {
-  display:inline-block;
-  width:100px;
-  height:100px;
-  background-color: black;
-  margin:10px;
+  background-color: lightgreen;
 }
-
-.two{
-  display:inline-block;
-  width:100px;
-  height:100px;
-  background-color: black;
-  margin:10px;
+.two {
+    background-color: lightblue;
 }
-
 .three {
-  display:inline-block;
-  width:100px;
-  height:100px;
-  background-color: black;
-  margin:10px;
+    background-color: pink;
+}
+.four {
+  background-color: orange;
 }
 
-.four {
-  display:inline-block;
-  width:100px;
-  height:100px;
-  background-color: black;
-  margin:10px;
+.clicked {
+  background-color: lightgrey;
 }

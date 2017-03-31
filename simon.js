@@ -3,13 +3,38 @@ $(function(){
   var computer = []
 
   $('.one').on('click',function(){
-    console.log(player);
-    $(this).css('background-color', 'yellow');
-    player.push($(this).attr("class"));
-    console.log(player);
+     logClick($(this));
+
+  });
+
+  $('.two').on('click',function(){
+     logClick($(this));
+
+  });
+
+  $('.three').on('click',function(){
+     logClick($(this));
+
+  });
+
+  $('.four').on('click',function(){
+     logClick($(this));
+
   });
 
 
+
+
+   function logClick(box){
+     var clicked = box;
+     $(clicked).addClass("clicked");
+     setTimeout(function(){
+       $(clicked).removeClass("clicked");
+     },150);
+     player.push($(clicked).attr("class"));
+     console.log(player);
+
+   }
 
 
 
