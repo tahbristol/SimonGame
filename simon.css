@@ -18,5 +18,9 @@
 }
 
 .clicked {
-  background-color: lightgrey !important;
+  background-color: black !important;
+}
+
+#startGame{
+  text-align: center;
 }

@@ -1,25 +1,50 @@
 $(function(){
-  var player = []
-  var computer = []
+  var player = [];
+  var computer = [];
+
+
+
+  $('#startGame').on('click',function(){
+      computerTurn();
+      console.log(checkStatus(player, computer));
+  });
 
   $('#one').on('click',function(){
+    var sound = document.getElementById('oneSound');
+        sound.play();
+
+           logClick($(this));
+           console.log("player = " +player + " " +"computer = "+ computer);
+           console.log(checkStatus());
+           if(checkStatus() === false){
+             console.log("try again");
+           }
+           else {
+             computerTurn();
+           }
+
+
+  });
+
+  $('#two').on('click',function(){
+    var sound = document.getElementById('twoSound');
+        sound.play();
      logClick($(this));
      computerTurn();
   });
 
-  $('#two').on('click',function(){
-     logClick($(this));
-
-  });
-
   $('#three').on('click',function(){
+    var sound = document.getElementById('threeSound');
+        sound.play();
      logClick($(this));
-
+     computerTurn();
   });
 
   $('#four').on('click',function(){
+    var sound = document.getElementById('fourSound');
+        sound.play();
      logClick($(this));
-
+     computerTurn();
   });
 
 
@@ -35,17 +60,29 @@ $(function(){
        box = box.toString();
        box = $("."+box);
        var clicked = box;
-       $(clicked).addClass("clicked");
-       setTimeout(function(){
-         $(clicked).removeClass("clicked");
-       },150);
 
        computer.push($(clicked).attr("id"));
+       //console.log(computer);
+       computer.forEach(function(item){
+
+            $('#'+item).addClass("clicked");
+
+
+           setTimeout(function(){
+             $('#'+item).removeClass("clicked");
+           },250);
+
+
+
+       });
+
+
+
        console.log("Computer: " + computer);
 
      }else {
        setTimeout(function(){
-         console.log("logClick: " + box);
+         //console.log("logClick: " + box);
          var clicked = box;
          $(clicked).addClass("clicked");
          setTimeout(function(){
@@ -56,17 +93,8 @@ $(function(){
           console.log("Player: " +player);
 
        },500);
-
-
      }
-
-
-
-
-
-
-
-   }
+    }
 
    /*
     1.computer chooses a box:done
@@ -91,12 +119,22 @@ $(function(){
 
    function computerTurn(){
      var number = getRandomInt(1,5);
-     console.log("computerTurn: " +number)
-
-     console.log(number);
      logClick(number);
-
    }
+
+   function checkStatus(player, computer){
+        if(player === undefined || player.length != computer.length){
+            return false;
+          }else {
+            if(player === computer){
+                console.log("match");
+                return true;
+              }
+
+            }
+      }
+
+
 
 
 
