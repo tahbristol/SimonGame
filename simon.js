@@ -1,12 +1,24 @@
 $(function(){
-  var player = [];
-  var computer = [];
+  var player = [1];
+  var computer = [1];
+
 
 
 
   $('#startGame').on('click',function(){
       computerTurn();
-      console.log(checkStatus(player, computer));
+    //  console.log("player: " +player);
+    checkStatus(player, computer)
+
+  });
+
+  $('#test').on('click',function(e){
+      e.stopPropagation();
+    //console.log("player: " +player);
+    //console.log("computer: "+ computer);
+    checkStatus(player, computer);
+
+
   });
 
   $('#one').on('click',function(){
@@ -14,37 +26,29 @@ $(function(){
         sound.play();
 
            logClick($(this));
-           console.log("player = " +player + " " +"computer = "+ computer);
-           console.log(checkStatus());
-           if(checkStatus() === false){
-             console.log("try again");
-           }
-           else {
-             computerTurn();
-           }
-
-
-  });
+        //   console.log("player = " +player + " " +"computer = "+ computer);
+        //   console.log(checkStatus());
+      });
 
   $('#two').on('click',function(){
     var sound = document.getElementById('twoSound');
         sound.play();
      logClick($(this));
-     computerTurn();
+
   });
 
   $('#three').on('click',function(){
     var sound = document.getElementById('threeSound');
         sound.play();
      logClick($(this));
-     computerTurn();
+
   });
 
   $('#four').on('click',function(){
     var sound = document.getElementById('fourSound');
         sound.play();
      logClick($(this));
-     computerTurn();
+
   });
 
 
@@ -78,7 +82,7 @@ $(function(){
 
 
 
-       console.log("Computer: " + computer);
+      // console.log("Computer: " + computer);
 
      }else {
        setTimeout(function(){
@@ -90,7 +94,7 @@ $(function(){
          },150);
 
          player.push($(clicked).attr("id"));
-          console.log("Player: " +player);
+        //  console.log("Player: " +player);
 
        },500);
      }
@@ -124,15 +128,19 @@ $(function(){
 
    function checkStatus(player, computer){
         if(player === undefined || player.length != computer.length){
-            return false;
-          }else {
-            if(player === computer){
+            console.log(false);
+          }else if(player.toString() === computer.toString() && player.toString() != ""){
                 console.log("match");
-                return true;
+                console.log(true);
               }
 
             }
-      }
+
+
+
+  function player(){
+
+  }
 
 
 
